@@ -1,7 +1,5 @@
 import React from 'react'
 
-export const DomoDigital = () => {
-  return (
-    <div>DomoDigital</div>
-  )
+export default function DomoDigital() {
+  return <h1>Domo Digital</h1>;
 }
