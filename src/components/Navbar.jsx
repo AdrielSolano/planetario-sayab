@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#034159' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#590303ff' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -56,7 +56,7 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               PaperProps={{
                 sx: {
-                  backgroundColor: '#1b263b',
+                  backgroundColor: '#590303ff',
                   color: 'white',
                 },
               }}
@@ -73,7 +73,7 @@ function Navbar() {
                       color: 'inherit',
                       width: '100%',
                       '&:hover': {
-                        color: '#0CF25D',
+                        color: '#f20c0cff',
                         transform: 'scale(1.05)',
                         transition: 'all 0.3s ease-in-out',
                       },
@@ -106,7 +106,7 @@ function Navbar() {
           <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
-              marginLeft: '300px',
+              marginLeft: '320px',
             }}
           >
             {pages.map((page) => (
@@ -122,7 +122,7 @@ function Navbar() {
                   fontWeight: 'bold',
                   textTransform: 'none',
                   '&:hover': {
-                    color: '#0CF25D',
+                    color: '#f20c0cff',
                     transform: 'scale(1.05)',
                     transition: 'all 0.3s ease-in-out',
                   },

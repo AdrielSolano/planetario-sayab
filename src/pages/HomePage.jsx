@@ -8,13 +8,15 @@ import {
   Button,
   Container,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 
 function HomePage() {
   const items = [
-    { title: 'Domo Digital', image: '/domo-digital.jpg' },
-    { title: 'Observatorio', image: '/observatorio.jpg' },
-    { title: 'Talleres', image: '/talleres.jpg' },
-    { title: 'Sala de Conferencias', image: '/sala-conferencias.jpg' },
+    { title: 'Domo Digital', image: '/domo.webp', path: '/domo-digital' },
+    { title: 'Observatorio', image: '/obse.jpg', path: '/observatorio' },
+    { title: 'Talleres', image: '/talle.jpeg', path: '/talleres' },
+    { title: 'Sala de Conferencias', image: '/confe.jpg', path: '/conferencias' },
   ];
 
   return (
@@ -52,12 +54,14 @@ function HomePage() {
             Explora el universo, aprende con las estrellas
           </Typography>
           <Button
+          component={Link}
+          to="/taquilla"
             variant="contained"
             sx={{
-              backgroundColor: '#038C3E',
+              backgroundColor: '#f20c0cff',
               '&:hover': {
-                backgroundColor: '#0CF25D',
-                color: '#034159',
+                backgroundColor: '#f20c0cff',
+                color: '#590303ff',
               },
             }}
           >
@@ -66,15 +70,15 @@ function HomePage() {
         </Box>
       </Box>
 
-      <Container sx={{ mt: 6 }}>
+      <Container sx={{ mt: 20 }}>
         {/* 2. Atracciones / Galería de servicios */}
         <Typography
           variant="h4"
           sx={{
             textAlign: 'center',
-            color: '#025951',
+            color: '#fff',
             fontWeight: 'bold',
-            mb: 4,
+            mb: 8,
           }}
         >
           Nuestras Atracciones
@@ -92,26 +96,34 @@ function HomePage() {
           }}
         >
           {items.map((item) => (
-            <Card
+            <Box
               key={item.title}
+              component={Link}
+              to={item.path}
               sx={{
-                cursor: 'pointer',
-                transition: 'transform 0.3s',
-                '&:hover': { transform: 'scale(1.05)' },
+                textDecoration: 'none',
               }}
             >
-              <CardMedia
-                component="img"
-                height="200"
-                image={item.image}
-                alt={item.title}
-              />
-              <CardContent>
-                <Typography variant="h6" align="center">
-                  {item.title}
-                </Typography>
-              </CardContent>
-            </Card>
+              <Card
+                sx={{
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s',
+                  '&:hover': { transform: 'scale(1.05)' },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={item.image}
+                  alt={item.title}
+                />
+                <CardContent>
+                  <Typography variant="h6" align="center" color="textPrimary">
+                    {item.title}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
           ))}
         </Box>
 
@@ -120,14 +132,15 @@ function HomePage() {
           <Typography
             variant="h4"
             component="h2"
-            sx={{ textAlign: 'center', mb: 4 }}
+            sx={{ textAlign: 'center', mb: 4, color: '#fff', fontWeight: 'bold' }}
           >
             Dónde Estamos
           </Typography>
+
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <iframe
               title="Mapa Planetario Sayab"
-              src="https://www.google.com/maps/embed?pb=!1m18!..." // reemplaza por URL válida
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.2125209404724!2d-87.0893643!3d20.6504438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e42e6729f5caf%3A0xd7547d42c1109a7f!2sSAYAB%20Planetario%20de%20Playa%20del%20Carmen!5e0!3m2!1ses!2smx!4v1694567890123!5m2!1ses!2smx"
               width="100%"
               height="400"
               style={{ border: 0, maxWidth: '800px' }}
@@ -136,10 +149,12 @@ function HomePage() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Box>
-          <Typography variant="body1" align="center" sx={{ mt: 2 }}>
-            Calle Principal #123, Colonia Centro, Playa del Carmen, Quintana Roo
+
+          <Typography variant="body1" align="center" color="white" sx={{ mt: 2 }}>
+            Calle 125 Norte S/n, Lote 16, Manzana 1, 77712 Playa del Carmen, México
           </Typography>
         </Box>
+
       </Container>
     </Box>
   );
