@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-export const Taquilla = () => {
+export default function Nosotros() {
   return (
-    <div>Taquilla</div>
-  )
+    <div>
+      <h1>Nosotros</h1>
+      <p>Contenido de la página Nosotros.</p>
+    </div>
+  );
 }

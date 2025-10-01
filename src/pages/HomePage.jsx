@@ -1,15 +1,6 @@
-import * as React from 'react';
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  Button,
-  Container,
-} from '@mui/material';
+import React from 'react';
+import { Box, Card, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 
 function HomePage() {
   const items = [
@@ -20,13 +11,13 @@ function HomePage() {
   ];
 
   return (
-    <Box>
-      {/* 1. Hero / Banner */}
+<Box sx={{ backgroundColor: '#7E1128', minHeight: '100vh', pb: 2 }}>
+      {/* Hero */}
       <Box
         sx={{
           position: 'relative',
           height: { xs: '300px', md: '500px' },
-          backgroundImage: 'url(/hero-planetario.jpg)', // tu imagen del hero
+          backgroundImage: 'url(/hero-planetario.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -35,51 +26,13 @@ function HomePage() {
           color: 'white',
           textAlign: 'center',
         }}
-      >
-        <Box
-          sx={{
-            bgcolor: 'rgba(0, 0, 0, 0.5)',
-            p: { xs: 2, md: 4 },
-            borderRadius: 2,
-          }}
-        >
-          <Typography
-            variant="h3"
-            component="h1"
-            sx={{ fontWeight: 'bold', mb: 2 }}
-          >
-            Bienvenidos al Planetario Sayab
-          </Typography>
-          <Typography variant="h6" sx={{ mb: 3 }}>
-            Explora el universo, aprende con las estrellas
-          </Typography>
-          <Button
-          component={Link}
-          to="/taquilla"
-            variant="contained"
-            sx={{
-              backgroundColor: '#f20c0cff',
-              '&:hover': {
-                backgroundColor: '#f20c0cff',
-                color: '#590303ff',
-              },
-            }}
-          >
-            Comprar Boletos
-          </Button>
-        </Box>
-      </Box>
+      />
 
-      <Container sx={{ mt: 20 }}>
-        {/* 2. Atracciones / Galería de servicios */}
+      <Container sx={{ mt: { xs: 6, md: 10 }, pb: { xs: 6, md: 10 } }}>
+        {/* Atracciones */}
         <Typography
           variant="h4"
-          sx={{
-            textAlign: 'center',
-            color: '#fff',
-            fontWeight: 'bold',
-            mb: 8,
-          }}
+          sx={{ textAlign: 'center', color: '#fff', fontWeight: 'bold', mb: 6 }}
         >
           Nuestras Atracciones
         </Typography>
@@ -87,36 +40,14 @@ function HomePage() {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(4, 1fr)',
-            },
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
             gap: 4,
           }}
         >
           {items.map((item) => (
-            <Box
-              key={item.title}
-              component={Link}
-              to={item.path}
-              sx={{
-                textDecoration: 'none',
-              }}
-            >
-              <Card
-                sx={{
-                  cursor: 'pointer',
-                  transition: 'transform 0.3s',
-                  '&:hover': { transform: 'scale(1.05)' },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={item.image}
-                  alt={item.title}
-                />
+            <Box key={item.title} component={Link} to={item.path} sx={{ textDecoration: 'none' }}>
+              <Card sx={{ cursor: 'pointer', transition: 'transform 0.3s', '&:hover': { transform: 'scale(1.05)' } }}>
+                <CardMedia component="img" height="200" image={item.image} alt={item.title} />
                 <CardContent>
                   <Typography variant="h6" align="center" color="textPrimary">
                     {item.title}
@@ -127,13 +58,9 @@ function HomePage() {
           ))}
         </Box>
 
-        {/* 3. Mapa y ubicación */}
+        {/* Mapa */}
         <Box sx={{ mt: 8, mb: 8 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{ textAlign: 'center', mb: 4, color: '#fff', fontWeight: 'bold' }}
-          >
+          <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 4, color: '#fff', fontWeight: 'bold' }}>
             Dónde Estamos
           </Typography>
 
@@ -147,14 +74,13 @@ function HomePage() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            />
           </Box>
 
-          <Typography variant="body1" align="center" color="white" sx={{ mt: 2 }}>
+          <Typography variant="body1" align="center" color="white" sx={{ mt: 2, fontFamily: 'NATS-Regular, Helvetica' }}>
             Calle 125 Norte S/n, Lote 16, Manzana 1, 77712 Playa del Carmen, México
           </Typography>
         </Box>
-
       </Container>
     </Box>
   );

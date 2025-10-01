@@ -4,9 +4,9 @@ import DomoDigital from '../pages/DomoDigital.jsx'; // si es export default, no 
 import { Observatorio } from '../pages/Observatorio.jsx';
 import { Talleres } from '../pages/Talleres.jsx';
 import { Conferencias } from '../pages/Conferencias.jsx';
-import { Nosotros } from '../pages/Nosotros.jsx';
-import { Taquilla } from '../pages/Taquilla.jsx';
 import Noticias from '../pages/Noticias.jsx'; // si es export default, no uses llaves
+import Nosotros from '../pages/Nosotros.jsx'; // si es export default, no uses llaves
+import Taquilla from '../pages/Taquilla.jsx'; // si es export default, no uses llaves
 
 export default function AppRoutes() {
   return (
