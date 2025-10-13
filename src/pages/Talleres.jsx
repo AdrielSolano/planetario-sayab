@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Talleres = () => {
+export  default function Talleres() {
   return (
     <div>Talleres</div>
   )
