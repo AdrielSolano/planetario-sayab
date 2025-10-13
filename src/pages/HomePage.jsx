@@ -24,12 +24,20 @@ function HomePage() {
 
       {/* Sección de Atracciones */}
       <Container sx={{ mt: { xs: 6, md: 10 } }}>
-        <Typography
-          variant="h4"
-          sx={{ textAlign: 'center', color: '#fff', fontWeight: 'bold', mb: 6 }}
-        >
-          Nuestras Atracciones
-        </Typography>
+       <Typography
+  variant="h4"
+  sx={{
+    textAlign: 'center',
+    color: '#fff',
+    fontWeight: 'bold',
+    mb: 6,
+    fontFamily: 'NATS-Regular, Helvetica', // <-- Línea añadida
+    wordSpacing: '5px', // Puedes ajustar el valor en píxeles
+    letterSpacing: '0px', // Puedes ajustar el valor en píxeles
+  }}
+>
+  DESCUBRE NUESTRAS ACTIVIDADES
+</Typography>
 
         <Box
           sx={{
@@ -53,33 +61,6 @@ function HomePage() {
         </Box>
       </Container>
 
-      
-
-      {/* Sección del Mapa */}
-      <Container sx={{ pb: { xs: 6, md: 10 } }}>
-        <Box sx={{ mb: 8 }}>
-          <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 4, color: '#fff', fontWeight: 'bold' }}>
-            Dónde Estamos
-          </Typography>
-
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <iframe
-              title="Mapa Planetario Sayab"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.355153545167!2d-87.08051792475454!3d20.65529147983651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4304b41a3555%3A0x595980b18835f85f!2sPlanetario%20Sayab!5e0!3m2!1ses-419!2smx!4v1728612668516!5m2!1ses-419!2smx"
-              width="100%"
-              height="400"
-              style={{ border: 0, borderRadius: '8px', maxWidth: '800px' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </Box>
-
-          <Typography variant="body1" align="center" color="white" sx={{ mt: 2, fontFamily: 'NATS-Regular, Helvetica' }}>
-            Calle 125 Norte S/n, Lote 16, Manzana 1, 77712 Playa del Carmen, México
-          </Typography>
-        </Box>
-      </Container>
     </Box>
   );
 }

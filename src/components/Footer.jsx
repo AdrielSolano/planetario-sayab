@@ -121,12 +121,34 @@ export default function Footer() {
               Planetario Sayab · Playa del Carmen <br />
               Acércate al universo a través de la ciencia y la tecnología.
             </Typography>
+
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mt: 5, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+              <LocationOnIcon fontSize="small" sx={{ mt: '1.5px' }} />
+              <Typography variant="body2" sx={{textAlign: 'left'}}>
+                Calle 125 Norte S/n, Lote 16, Manzana 1,<br />
+                CP. 77712 Playa del Carmen, México
+              </Typography>
+            </Box>
+            
+            <Box sx={{ mt: 2 }}>
+              <iframe
+                title="Mapa de Ubicación Planetario Sayab"
+                // 👇 ESTA ES LA URL CORRECTA Y COMPLETA
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.364494951012!2d-87.08632562475176!3d20.65507117978241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4303b1e3a677%3A0x43323933a8264b30!2sPlanetario%20Sayab!5e0!3m2!1ses-419!2smx!4v1665440751999!5m2!1ses-419!2smx"
+                width="100%"
+                height="150"
+                style={{ border: 0, borderRadius: '8px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </Box>
           </Box>
 
           {/* Contacto (centrado en la página) */}
           <Box
             sx={{
-              gridColumn: { xs: '1 / -1', md: '5 / span 4' }, // 👈 centrado bajo el logo SAYAB
+              gridColumn: { xs: '1 / -1', md: '5 / span 4' },
               textAlign: 'left',
             }}
           >
@@ -140,13 +162,6 @@ export default function Footer() {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.2 }}>
               <EmailIcon fontSize="small" />
               <Typography variant="body2">difusionsayab@gmail.com</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-              <LocationOnIcon fontSize="small" sx={{ mt: '2px' }} />
-              <Typography variant="body2">
-                Calle 125 Norte S/n, Lote 16, Manzana 1,<br />
-                CP. 77712 Playa del Carmen, México
-              </Typography>
             </Box>
           </Box>
 
@@ -196,7 +211,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="body2">
-            &copy; {new Date().getFullYear()} Planetario Sayab. Todos los derechos reservados.
+            © {new Date().getFullYear()} Planetario Sayab. Todos los derechos reservados.
           </Typography>
         </Box>
       </Container>
