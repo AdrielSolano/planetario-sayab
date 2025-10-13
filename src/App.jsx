@@ -10,14 +10,18 @@ export default function App() {
     <Router>
       <CssBaseline />
       <GlobalStyles styles={{
+        html: {
+          scrollbarGutter: 'stable',
+          overflowX: 'hidden', // <-- AÑADE ESTO AQUÍ
+        },
         body: {
           margin: 0,
-          overflowX: 'hidden',  // 👈 evita scroll horizontal
-          backgroundColor: '#7E1128', // 👈 mantiene tu fondo
+          overflowX: 'hidden', // <-- ASEGÚRATE DE QUE ESTÉ AQUÍ TAMBIÉN
+          backgroundColor: '#7E1128', 
         },
         '*': { boxSizing: 'border-box' },
       }} />
-
+      
       <Navbar />
       <AppRoutes />
       <Footer />

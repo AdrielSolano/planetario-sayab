@@ -14,14 +14,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  { label: 'Inicio', path: '/' },
-  { label: 'Domo Digital', path: '/domo-digital' },
-  { label: 'Talleres', path: '/talleres' },
-  { label: 'Conferencias', path: '/conferencias' },
-  { label: 'Observatorio', path: '/observatorio' },
-  { label: 'Nosotros', path: '/nosotros' },
-  { label: 'Taquilla', path: '/taquilla' },
-  { label: 'Noticias', path: '/noticias' },
+  { label: 'INICIO', path: '/' },
+  { label: 'TAQUILLA', path: '/taquilla' },
+  { label: 'TALLERES', path: '/talleres' },
+  { label: 'OBSERVATORIO', path: '/observatorio' },
+  { label: 'DOMO DIGITAL', path: '/domo-digital' },
+  { label: 'CONFERENCIAS', path: '/conferencias' },
+  { label: 'NOTICIAS', path: '/noticias' },
+  { label: 'NOSOTROS', path: '/nosotros' },
 ];
 
 function Navbar() {
@@ -35,15 +35,14 @@ function Navbar() {
       position="static"
       sx={{
         backgroundColor: '#F1F8FD',
-        width: '100%',     // 👈 en vez de 1505px
-        height: '129px',   // 👈 tu altura se mantiene
-        overflow: 'hidden', // 👈 asegura que nada se desborde
-        padding: '20px',        // 👈 elimina cualquier padding
+        width: '100%',
+        height: '129px',
+        overflow: 'hidden',
+        padding: '20px',
       }}
     >
-
       <Container maxWidth="xl" disableGutters>
-        <Toolbar sx={{ px: { xs: 2, md: 10, right: 50 } }}>
+        <Toolbar sx={{ px: { xs: 2, md: 5 } }}>
           {/* Logos (desktop) */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 4 }}>
             <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center' }}>
@@ -58,10 +57,10 @@ function Navbar() {
           </Box>
 
           {/* Espaciador */}
-          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ flexGrow: 1, mr: 13 }} />
 
           {/* Botonera desktop */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2, flexWrap: 'nowrap' }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1.5, flexWrap: 'nowrap' }}>
             {pages.map((page) => (
               <Button
                 key={page.label}
@@ -71,8 +70,9 @@ function Navbar() {
                 sx={{
                   color: 'black',
                   fontFamily: 'NATS-Regular, helvetica',
-                  fontSize: '16px',
+                  fontSize: '15px',
                   textTransform: 'none',
+                  whiteSpace: 'nowrap', // Evita que el texto se divida en dos líneas
                   '&:hover': { color: '#7E1128', transform: 'scale(1.05)' },
                 }}
               >

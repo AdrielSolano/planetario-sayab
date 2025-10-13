@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Card, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ImageCarousel from "../components/ImageCarousel";
+import CtaBanner from '../components/CtaBanner'; // 👇 1. Importamos el nuevo componente
 
 function HomePage() {
   const items = [
@@ -11,25 +13,17 @@ function HomePage() {
   ];
 
   return (
-<Box sx={{ backgroundColor: '#7E1128', minHeight: '100vh', pb: 2 }}>
-      {/* Hero */}
-      <Box
-        sx={{
-          position: 'relative',
-          height: { xs: '300px', md: '500px' },
-          backgroundImage: 'url(/hero-planetario.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          textAlign: 'center',
-        }}
-      />
+    <Box sx={{ backgroundColor: '#7E1128', minHeight: '100vh', pb: 2 }}>
+      
+      <Box sx={{ mt: '10px' }}>
+        <ImageCarousel />
+      </Box>
 
-      <Container sx={{ mt: { xs: 6, md: 10 }, pb: { xs: 6, md: 10 } }}>
-        {/* Atracciones */}
+      {/* 👇 2. Usamos el componente del Banner de CTA aquí */}
+      <CtaBanner />
+
+      {/* Sección de Atracciones */}
+      <Container sx={{ mt: { xs: 6, md: 10 } }}>
         <Typography
           variant="h4"
           sx={{ textAlign: 'center', color: '#fff', fontWeight: 'bold', mb: 6 }}
@@ -57,9 +51,13 @@ function HomePage() {
             </Box>
           ))}
         </Box>
+      </Container>
 
-        {/* Mapa */}
-        <Box sx={{ mt: 8, mb: 8 }}>
+      
+
+      {/* Sección del Mapa */}
+      <Container sx={{ pb: { xs: 6, md: 10 } }}>
+        <Box sx={{ mb: 8 }}>
           <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 4, color: '#fff', fontWeight: 'bold' }}>
             Dónde Estamos
           </Typography>
@@ -67,10 +65,10 @@ function HomePage() {
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <iframe
               title="Mapa Planetario Sayab"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.2125209404724!2d-87.0893643!3d20.6504438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e42e6729f5caf%3A0xd7547d42c1109a7f!2sSAYAB%20Planetario%20de%20Playa%20del%20Carmen!5e0!3m2!1ses!2smx!4v1694567890123!5m2!1ses!2smx"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.355153545167!2d-87.08051792475454!3d20.65529147983651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4304b41a3555%3A0x595980b18835f85f!2sPlanetario%20Sayab!5e0!3m2!1ses-419!2smx!4v1728612668516!5m2!1ses-419!2smx"
               width="100%"
               height="400"
-              style={{ border: 0, maxWidth: '800px' }}
+              style={{ border: 0, borderRadius: '8px', maxWidth: '800px' }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
