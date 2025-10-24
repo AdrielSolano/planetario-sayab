@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Card, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ImageCarousel from "../components/ImageCarousel";
-import CtaBanner from '../components/CtaBanner'; // 👇 1. Importamos el nuevo componente
+import CtaBanner from '../components/CtaBanner';
 
 function HomePage() {
   const items = [

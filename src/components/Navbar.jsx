@@ -20,7 +20,7 @@ const pages = [
   { label: 'OBSERVATORIO', path: '/observatorio' },
   { label: 'DOMO DIGITAL', path: '/domo-digital' },
   { label: 'CONFERENCIAS', path: '/conferencias' },
-  { label: 'NOTICIAS', path: '/noticias' },
+  { label: 'HORARIOS', path: '/horarios' },
   { label: 'NOSOTROS', path: '/nosotros' },
 ];
 
